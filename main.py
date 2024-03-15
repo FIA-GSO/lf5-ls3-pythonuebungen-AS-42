@@ -33,16 +33,17 @@ def compute_r2d2_population(steps: int) -> tuple[int, int, int]:
 
 # ---------------------Aufgabe 2 Streichholz------------------------------
 # IMPLEMENT YOUR SOLUTION FOR THE STEICHHOLZSPIEL HERE
+def nimgame():
 
-nim_game_running = True
+    nim_game_running = True
 
-Streichholz = 29
-while nim_game_running:
-    Player_B = int(input(f"Es sind {Streichholz} Streichhölzer übrig. Ziehen Sie 1-6!"))
-    Streichholz = Streichholz - 7
-    if (Streichholz == 1):
-        print("Es ist nur noch 1 Streichholz übrig, welches du ziehen musst. Du hast verloren")
-        nim_game_running = False
+    Streichholz = 29
+    while nim_game_running:
+        Player_B = int(input(f"Es sind {Streichholz} Streichhölzer übrig. Ziehen Sie 1-6!"))
+        Streichholz = Streichholz - 7
+        if (Streichholz == 1):
+            print("Es ist nur noch 1 Streichholz übrig, welches du ziehen musst. Du hast verloren")
+            nim_game_running = False
 
 
 # ---------------------Aufgabe 3 Heron ------------------------------------
