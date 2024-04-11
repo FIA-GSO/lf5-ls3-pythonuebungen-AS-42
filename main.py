@@ -10,38 +10,29 @@ def compute_r2d2_population(steps: int) -> tuple[int, int, int]:
     :return: tuple of childs adults and old r2d2
     """
 
-    jung = 10
-    erwachsen = 10
-    alt = 10
+    anzahl_jung = 10
+    anzahl_erwachsen = 10
+    anzahl_alt = 10
 
-    for i in range(steps):
-        neu_jung = (erwachsen * 4) + (alt * 2)
-        alt = int(erwachsen / 3)
-        erwachsen = int(jung / 2)
-        jung = neu_jung
+    for step in range(steps):
+        anzahl_neu_jung = (anzahl_erwachsen * 4) + (anzahl_alt * 2)
+        anzahl_alt = int(anzahl_erwachsen / 3)
+        anzahl_erwachsen = int(anzahl_jung / 2)
+        anzahl_jung = anzahl_neu_jung
 
-    '''
-    0: 10 10 10
-    1: 60 5 3
-    2: 26 30 1
-    3: 122 13 10
-    '''
-    r2d2s = (jung, erwachsen, alt)
-
-    return r2d2s
+    return anzahl_jung, anzahl_erwachsen, anzahl_alt
 
 
 # ---------------------Aufgabe 2 Streichholz------------------------------
 # IMPLEMENT YOUR SOLUTION FOR THE STEICHHOLZSPIEL HERE
 def nimgame():
-
     nim_game_running = True
 
-    Streichholz = 29
+    streichholz = 29
     while nim_game_running:
-        Player_B = int(input(f"Es sind {Streichholz} Streichhölzer übrig. Ziehen Sie 1-6!"))
-        Streichholz = Streichholz - 7
-        if (Streichholz == 1):
+        input(f"Es sind {streichholz} Streichhölzer übrig. Ziehen Sie 1-6!")
+        streichholz = streichholz - 7
+        if streichholz == 1:
             print("Es ist nur noch 1 Streichholz übrig, welches du ziehen musst. Du hast verloren")
             nim_game_running = False
 
